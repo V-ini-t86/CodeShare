@@ -1,5 +1,8 @@
 <h1 class="text-center">Contact Us</h1>
 <form class="col-md-6 col-md-offset-3">
+  {{#each errorMessage}}
+  <div class="alert alert-danger">{{this.msg}}</div>
+  {{/each}}
      <div class="mb-3">
     <label  class="form-label">Full Name</label>
     <input type="text" class="form-control" placeholder ="xyz codeshare" aria-describedby="emailHelp">
@@ -21,5 +24,6 @@
     <input type="checkbox" class="form-check-input">
     <label class="form-check-label">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <button  type="submit" class="btn btn-primary">Submit</button>
 </form>
