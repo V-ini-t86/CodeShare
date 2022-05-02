@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  padding-top: 70px;
+  margin: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
+.view{
+  padding: 9px;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid #222020;
+  width: 670px;
+  height: 380px;
+  border-radius: 10px;
+  background-image: url('../images/look.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.87;
+}
+.form-signin{
+  max-width: 330px;
+  padding:15px;
+  margin: 0 auto;
+} 
+.main{
+margin: 10px auto;
+padding: 20px
 
-a {
-  color: #00B7FF;
 }

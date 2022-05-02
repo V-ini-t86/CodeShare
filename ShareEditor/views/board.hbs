@@ -1,1 +1,654 @@
-<a href="https://61f44076d082fa0008a6ba15--priceless-wilson-534f6e.netlify.app/"></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- mainly used in SEO jobs -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open Board </title>
+    <style>
+        body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+body{
+  margin: 0 px;
+  background-color: #F0FFFF ;
+}  
+
+
+.color{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.toolbar{
+  border :2.5px solid gray;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80vw;
+  height: 80px;
+  margin: 0 auto;
+}
+.pad-color{
+      border: 1px solid #1B1212;
+      background-color: #1B1212;
+      width: 35px;
+      height: 35px;
+      border-radius: 4px ;
+}
+.tool-img{
+  height: 35px;
+  width: 35px;
+}
+.color-container{
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;  
+}
+.color{
+  height: 35px;
+  width: 35px;
+  border-radius: 50px;
+}
+.red{
+  background-color: #ff6347;
+}
+.green{
+  background-color:#32cd32;
+}
+.blue{
+  background-color: #4682b4 ;
+}
+.black{
+  background-color: #1B1212 ;
+}
+.white{
+  background-color: #F0FFFF;
+  border: 1px solid #1B1212;
+}
+.yellow{
+  background-color: #FFC300;
+}
+.size-box{
+ 
+  width: 150px;
+  height:30px;
+  border: 1px solid  rgb(133, 126, 126) ;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  display: none;
+  border-radius: 4px;
+}
+.size{
+  background-color: gray;
+  border-radius: 50px;
+
+}
+
+.size1{
+  height: 10px;
+  width: 10px;
+}
+.size2{
+  height: 17px;
+  width: 17px;
+}
+.size3{
+  height: 20px;
+  width: 20px;
+}
+.size4{
+  height: 24px;
+  width: 24px;
+}
+/* -----------------------eraser size------------------ */
+#erase1{
+  height: 10px;
+  width: 10px;
+}
+#erase2{
+  height: 17px;
+  width: 17px;
+}
+#erase3{
+  height: 20px;
+  width: 20px;
+}
+#erase4{
+  height: 24px;
+  width: 24px;
+}
+
+/* --------------------------moving tab----------------------- */
+#textdiv{
+  position: absolute;
+  top: 95px;
+  display: none;
+  border: 1px solid #4682b4
+}
+#textArea{
+   border: none;
+   outline: none;
+   padding: 1rem;
+
+}
+    </style>
+    <!-- jquery cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- cdn link for html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <div class="toolbar">
+        <div class="tool" id="pencil">
+            {{!-- <img src="" alt="Pencil" class="tool-img"> --}}
+            <svg class="tool-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 53.255 53.255" style="enable-background:new 0 0 53.255 53.255;" xml:space="preserve" width="512px" height="512px" class=""><g transform="matrix(0.842943 0 0 0.842943 4.18203 4.18203)"><path style="fill:#D75A4A;" d="M39.598,2.343c3.124-3.124,8.19-3.124,11.314,0s3.124,8.19,0,11.314L39.598,2.343z" data-original="#D75A4A" class=""/><polygon style="fill:#151515" points="42.426,17.899 16.512,43.814 15.982,48.587 44.548,20.02 44.548,20.02 " data-original="#ED8A19" class="" data-old_color="#ED8A19"/><polygon style="fill:#151515" points="10.325,42.93 15.098,42.4 41.012,16.485 36.77,12.243 10.855,38.157 " data-original="#ED8A19" class="" data-old_color="#ED8A19"/><polygon style="fill:#151515" points="35.356,10.829 33.234,8.707 33.234,8.707 4.668,37.273 9.441,36.743 " data-original="#ED8A19" class="" data-old_color="#ED8A19"/><polygon style="fill:#141514" points="48.79,15.778 48.79,15.778 50.912,13.657 39.598,2.343 37.476,4.465 37.477,4.465 " data-original="#C7CAC7" class="" data-old_color="#C7CAC7"/><polygon style="fill:#141514" points="36.062,5.879 36.062,5.879 34.648,7.293 34.648,7.293 45.962,18.606 45.962,18.606   47.376,17.192 47.376,17.192 " data-original="#C7CAC7" class="" data-old_color="#C7CAC7"/><path style="fill:#FBCE9D" d="M14.424,44.488l-5.122,0.569c-0.036,0.004-0.073,0.006-0.109,0.006c0,0-0.001,0-0.001,0H9.192H9.192  c-0.001,0-0.001,0-0.001,0c-0.036,0-0.073-0.002-0.109-0.006c-0.039-0.004-0.071-0.026-0.108-0.035  c-0.072-0.017-0.141-0.035-0.207-0.067c-0.05-0.024-0.093-0.053-0.138-0.084c-0.057-0.04-0.109-0.083-0.157-0.134  c-0.038-0.04-0.069-0.081-0.1-0.127c-0.038-0.057-0.069-0.116-0.095-0.181c-0.022-0.054-0.038-0.107-0.05-0.165  c-0.007-0.032-0.024-0.059-0.028-0.092c-0.004-0.038,0.01-0.073,0.01-0.11c0-0.038-0.014-0.072-0.01-0.11l0.569-5.122l-5.122,0.569  c-0.037,0.004-0.075,0.006-0.111,0.006c-0.079,0-0.152-0.024-0.227-0.042L0.442,51.399l2.106-2.106c0.391-0.391,1.023-0.391,1.414,0  s0.391,1.023,0,1.414l-2.106,2.106l12.03-2.864c-0.026-0.109-0.043-0.222-0.03-0.339L14.424,44.488z" data-original="#FBCE9D" class="" data-old_color="#FBCE9D"/><path style="fill:#000000" d="M3.962,49.293c-0.391-0.391-1.023-0.391-1.414,0l-2.106,2.106L0,53.255l1.856-0.442l2.106-2.106  C4.352,50.316,4.352,49.684,3.962,49.293z" data-original="#38454F" class="" data-old_color="#38454F"/><polygon style="fill:#F2ECBF;" points="48.79,15.778 37.477,4.465 37.476,4.465 36.062,5.879 36.062,5.879 47.376,17.192   47.376,17.192 48.79,15.778 " data-original="#F2ECBF" class=""/><path style="fill:#FFFFFF" d="M41.012,16.485L15.098,42.4l-4.773,0.53l0.53-4.773L36.77,12.243l-1.414-1.414L9.441,36.743  l-4.773,0.53l-1.133,1.133l-0.228,0.957c0.075,0.018,0.147,0.042,0.227,0.042c0.036,0,0.074-0.002,0.111-0.006l5.122-0.569  l-0.569,5.122c-0.004,0.038,0.01,0.073,0.01,0.11c0,0.038-0.014,0.072-0.01,0.11c0.004,0.033,0.021,0.06,0.028,0.092  c0.012,0.057,0.029,0.112,0.05,0.165c0.026,0.064,0.057,0.124,0.095,0.181c0.03,0.045,0.063,0.088,0.1,0.127  c0.047,0.05,0.1,0.094,0.157,0.134c0.044,0.031,0.089,0.061,0.138,0.084c0.065,0.031,0.135,0.05,0.207,0.067  c0.038,0.009,0.069,0.03,0.108,0.035c0.036,0.004,0.072,0.006,0.109,0.006h0.001h0h0.001h0.001c0,0,0.001,0,0.001,0h0  c0.035,0,0.072-0.002,0.109-0.006l5.122-0.569l-0.569,5.122c-0.013,0.118,0.004,0.23,0.03,0.339l0.963-0.229l1.133-1.132l0.53-4.773  l25.914-25.915L41.012,16.485z" data-original="#EBBA16" class="active-path" data-old_color="#EBBA16"/><polygon style="fill:#F2ECBF;" points="45.962,18.606 34.648,7.293 34.648,7.293 33.234,8.707 33.234,8.707 35.356,10.829   36.77,12.243 41.012,16.485 42.426,17.899 44.548,20.02 44.548,20.02 45.962,18.606 " data-original="#F2ECBF" class=""/></g> </svg>
+
+
+            <div class="size-box">
+                <div class="size1 size"></div>
+                <div class="size2 size"></div>
+                <div class="size3 size"></div>
+                <div class="size4 size"></div>
+            </div>
+        </div>
+        <div class="tool eraser">
+            {{!-- <img src="/home/kira/Desktop/Major/ShareEditor/public/images/Eraser.svg" alt="Eraser" class="tool-img"> --}}
+        <svg  class ="tool-img"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 280 280" style="enable-background:new 0 0 280 280;" xml:space="preserve" width="512px" height="512px"><g><g>
+	<path style="fill:#26A6D1;" d="M183.679,4.634l91.683,91.683c6.178,6.178,6.178,16.207,0,22.385L118.695,275.359   c-6.178,6.187-16.207,6.187-22.385,0L4.637,183.676c-6.178-6.178-6.178-16.198,0-22.376L161.295,4.634   C167.482-1.545,177.501-1.545,183.679,4.634z" data-original="#26A6D1"/>
+	<path style="fill:#E2574C;" d="M84.34,81.597L4.637,161.3c-6.178,6.178-6.178,16.198,0,22.376l91.683,91.683   c6.178,6.187,16.207,6.187,22.385,0l79.703-79.694L84.34,81.597z" data-original="#E2574C"/>
+	<path style="fill:#CB4E44;" d="M40.585,125.352L4.637,161.3c-6.178,6.178-6.178,16.198,0,22.376l91.683,91.683   c6.178,6.187,16.207,6.187,22.385,0l35.949-35.94L40.585,125.352z" data-original="#CB4E44"/>
+	<path style="fill:#605F5F" d="M20.416,145.548l114.041,114.041l-10.555,10.555L9.861,156.103L20.416,145.548z" data-original="#EAE5E4" class="active-path" data-old_color="#EAE5E4"/>
+</g></g> </svg>
+    <div class="size-box">
+        <div class=" size" id="erase1"></div>
+        <div class=" size" id="erase2"></div>
+        <div class="size" id="erase3"></div>
+        <div class="size" id="erase4"></div>
+    </div>
+        </div>
+        <div class="tool rect">
+        {{!-- <img longdesc = "https://drive.google.com/file/d/1Hc-rnslWDyfgp34EUcuXvEoidwQLIxGq/view?usp=sharing" alt="Rectangle" class="tool-img"> --}}
+      <svg  class ="tool-img" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M38 4H10C8.89543 4 8 4.89543 8 6V42C8 43.1046 8.89543 44 10 44H38C39.1046 44 40 43.1046 40 42V6C40 4.89543 39.1046 4 38 4Z" stroke="black" stroke-width="4"/>
+</svg>
+        <div class="size-box">
+            <div class="size1 size"></div>
+            <div class="size2 size"></div>
+            <div class="size3 size"></div>
+            <div class="size4 size"></div>
+        </div>    
+    </div>
+        <div class="tool line">
+            {{!-- <img src="/home/kira/Desktop/Major/ShareEditor/public/images/line.svg" alt="line"class="tool-img"> --}}
+<svg  class="tool-img"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve" width="512px" height="512px" class=""><g><g><path d="M37.059,16H26H16H4.941C2.224,16,0,18.282,0,21s2.224,5,4.941,5H16h10h11.059  C39.776,26,42,23.718,42,21S39.776,16,37.059,16z" data-original="#66C183" class="active-path" data-old_color="#67C184" fill="#FA5F55" /></g></g> </svg>
+
+            <div class="size-box">
+                <div class="size1 size"></div>
+                <div class="size2 size"></div>
+                <div class="size3 size"></div>
+                <div class="size4 size"></div>
+            </div>
+        </div>
+        <div class="tool pad-color">
+             {{!-- <img src="./NewIcons/toggle.svg" alt="" class="tool-img">  --}}
+            <svg  class="tool-img"version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="94.073px" height="94.072px" viewBox="0 0 94.073 94.072" style="enable-background:new 0 0 94.073 94.072;"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path d="M91.465,5.491c-0.748-0.311-1.609-0.139-2.18,0.434l-8.316,8.316C72.046,5.057,60.125,0,47.399,0
+			c-2.692,0-5.407,0.235-8.068,0.697C21.218,3.845,6.542,17.405,1.944,35.244c-0.155,0.599-0.023,1.235,0.355,1.724
+			c0.379,0.489,0.962,0.775,1.581,0.775h12.738c0.839,0,1.59-0.524,1.878-1.313c3.729-10.193,12.992-17.971,23.598-19.814
+			c1.747-0.303,3.525-0.456,5.288-0.456c8.428,0,16.299,3.374,22.168,9.5l-8.445,8.444c-0.571,0.572-0.742,1.432-0.434,2.179
+			c0.311,0.748,1.039,1.235,1.848,1.235h28.181c1.104,0,2-0.896,2-2V7.338C92.7,6.53,92.211,5.801,91.465,5.491z"/>
+		<path d="M90.192,56.328H77.455c-0.839,0-1.59,0.523-1.878,1.312c-3.729,10.193-12.992,17.972-23.598,19.814
+			c-1.748,0.303-3.525,0.456-5.288,0.456c-8.428,0-16.3-3.374-22.168-9.5l8.444-8.444c0.572-0.572,0.743-1.432,0.434-2.179
+			c-0.31-0.748-1.039-1.235-1.848-1.235H3.374c-1.104,0-2,0.896-2,2v28.181c0,0.809,0.487,1.538,1.235,1.848
+			c0.746,0.31,1.607,0.138,2.179-0.435l8.316-8.315c8.922,9.183,20.843,14.241,33.569,14.241c2.693,0,5.408-0.235,8.069-0.697
+			c18.112-3.146,32.789-16.708,37.387-34.547c0.155-0.6,0.023-1.234-0.354-1.725C91.395,56.615,90.811,56.328,90.192,56.328z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+        </div>
+        <div class="tool all-clear">
+            {{!-- <img src="/home/kira/Desktop/Major/ShareEditor/public/images/CloseButton.svg" alt="CloseBtn" class="tool-img"> --}}
+            <svg class="tool-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px" class=""><g><circle style="fill:#E21B1B;" cx="256" cy="256" r="256" data-original="#E21B1B" class=""/><path style="fill:#C40606;" d="M510.28,285.304L367.912,142.936L150.248,368.608l140.928,140.928  C406.352,493.696,497.056,401.288,510.28,285.304z" data-original="#C40606" class=""/><g>
+	<path style="fill:#261414" d="M354.376,371.536c-5.12,0-10.232-1.952-14.144-5.856L146.408,171.848   c-7.816-7.816-7.816-20.472,0-28.28s20.472-7.816,28.28,0L368.52,337.4c7.816,7.816,7.816,20.472,0,28.28   C364.608,369.584,359.496,371.536,354.376,371.536z" data-original="#FFFFFF" class="active-path" data-old_color="#FFFFFF"/>
+	<path style="fill:#261414" d="M160.544,371.536c-5.12,0-10.232-1.952-14.144-5.856c-7.816-7.816-7.816-20.472,0-28.28   l193.832-193.832c7.816-7.816,20.472-7.816,28.28,0s7.816,20.472,0,28.28L174.688,365.68   C170.784,369.584,165.664,371.536,160.544,371.536z" data-original="#FFFFFF" class="active-path" data-old_color="#FFFFFF"/>
+</g></g> </svg>
+        </div>
+        <div class="tool text">
+            {{!-- <img src="/home/kira/Desktop/Major/ShareEditor/public/images/text.svg" alt="text" class="tool-img"> --}}
+            <svg class="tool-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+ <defs id="0">
+  <linearGradient id="B">
+   <stop id="W" stop-color="#fff" stop-opacity="0.8"/>
+   <stop id="X" offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="C">
+   <stop id="Y" stop-color="#bed855"/>
+   <stop id="Z" offset="1" stop-color="#8bb300"/>
+  </linearGradient>
+  <linearGradient id="D">
+   <stop id="a" stop-color="#2e3436"/>
+   <stop id="b" offset="1" stop-color="#2e3436" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient cx="25.712" cy="48.735" r="21.856" id="E" xlink:href="#D" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,0.09243698,0,44.229759)"/>
+  <radialGradient cx="13.559" cy="12.06" r="16.219" id="F" xlink:href="#C" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.6174379,2.5604989,-3.7886681,0.9135993,49.367351,-37.86865)"/>
+  <linearGradient y1="2.438" x2="0" y2="43.34" id="G" xlink:href="#B" gradientUnits="userSpaceOnUse"/>
+  <radialGradient cx="34.13" cy="8.609" r="3.03" id="H" xlink:href="#C" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.9999999,2.0717464e-7,-2.1678585e-7,2.0927836,-34.124995,-9.2675658)"/>
+  <linearGradient x1="34.13" y1="8.75" x2="36.533" y2="6.363" id="I" xlink:href="#B" gradientUnits="userSpaceOnUse"/>
+  <filter x="-0.16" y="-0.151" width="1.321" height="1.302" color-interpolation-filters="sRGB" id="J">
+   <feGaussianBlur stdDeviation="0.5327" id="c"/>
+  </filter>
+ </defs>
+ <path d="m 47.568058,48.734642 a 21.855595,2.0202651 0 1 1 -43.7111893,0 21.855595,2.0202651 0 1 1 43.7111893,0 z" transform="matrix(1.0944165,0,0,0.9661277,-4.1401442,-2.4030967)" id="1" opacity="0.54" fill="url(#E)"/>
+ <path d="M 9.84375,1.367375 C 8.1263501,1.367375 6.75,2.7437253 6.75,4.461125 l 0,37.15625 c 0,1.7174 1.3763496,3.093751 3.09375,3.09375 l 28.3125,0 c 1.7174,0 3.09375,-1.376351 3.09375,-3.09375 l 0,-33.21875 -6.75,-7.03125 -24.65625,0 z" id="2" fill="#445800"/>
+ <path d="m 9.84375,2.25 c -1.1586131,0 -2.0625,0.903887 -2.0625,2.0625 l 0,37.15625 c 0,1.158614 0.9038868,2.062501 2.0625,2.0625 l 28.3125,0 c 1.158613,0 2.0625,-0.903888 2.0625,-2.0625 l 0,-32.78125 L 34.0625,2.25 9.84375,2.25 z" transform="translate(4.4958504e-8,0.148625)" id="3" fill="url(#F)"/>
+ <path d="m 9.84375,2.75 c -0.8977312,0 -1.5625,0.6647689 -1.5625,1.5625 l 0,37.15625 c 0,0.897732 0.6647689,1.562501 1.5625,1.5625 l 28.3125,0 c 0.897731,0 1.5625,-0.66477 1.5625,-1.5625 l 0,-32.625 -5.875,-6.09375 -24,0 z" transform="translate(4.4958504e-8,0.148625)" id="4" opacity="0.8" fill="none" stroke="url(#G)" stroke-linejoin="round" stroke-linecap="square"/>
+ <path d="m 32.25,2.40625 0,6.875 c 0,0.956611 0.676661,1.593751 1.71875,1.59375 l 6.25,0 0,-1.8125 -6.9375,-6.65625 -1.03125,0 z" id="5" opacity="0.16" fill="#2e3436" filter="url(#J)"/>
+ <path d="m 33.125,1.375 0,6.3125 c -2e-6,1.158614 0.903887,2.062501 2.0625,2.0625 l 6.0625,0 0,-1.34375 -6.75,-7.03125 -1.375,0 z" id="6" fill="#445800"/>
+ <path d="m 34.125,2.40625 0,5.28125 c -10e-7,0.6407004 0.421799,1.0625006 1.0625,1.0625 l 5,0 -6.0625,-6.34375 z" id="7" fill="url(#H)"/>
+ <path d="m 34.625,3.6875 0,4 c -10e-7,0.3773049 0.185194,0.5625003 0.5625,0.5625 l 3.84375,0 L 34.625,3.6875 z" id="8" opacity="0.8" fill="none" stroke="url(#I)" stroke-linecap="square"/>
+ <g transform="translate(0,0.4998759)" id="9" opacity="0.5" fill="#fff">
+  <rect width="21.968" height="3" x="11.5" y="12.539" id="K"/>
+  <rect width="17.353" height="3" x="11.5" y="6.539" id="L"/>
+  <rect width="19.726" height="3" x="11.5" y="18.539" id="M"/>
+  <rect width="23.813" height="3" x="11.5" y="24.539" id="N"/>
+  <rect width="22.363" height="3" x="11.5" y="30.539" id="O"/>
+  <rect width="25" height="3" x="11.5" y="36.539" id="P"/>
+ </g>
+ <g transform="translate(0,-0.4998747)" id="A" fill="#445800">
+  <rect width="21.968" height="3" x="11.5" y="12.539" id="Q"/>
+  <rect width="17.353" height="3" x="11.5" y="6.539" id="R"/>
+  <rect width="19.726" height="3" x="11.5" y="18.539" id="S"/>
+  <rect width="23.813" height="3" x="11.5" y="24.539" id="T"/>
+  <rect width="22.363" height="3" x="11.5" y="30.539" id="U"/>
+  <rect width="25" height="3" x="11.5" y="36.539" id="V"/>
+ </g>
+</svg>
+
+            <div id="textdiv">
+                <textarea id = "textArea" cols="20" rows="4" autofocus>
+                    
+            </textarea></div>
+                 
+        </div>
+        
+        <div class="tool"></div>
+        <div class="color-container">
+            <div class="color red"></div>
+            <div class="color blue"></div>
+            <div class="color green"></div>
+            <div class="color black"></div>
+            <div class="color white"></div>
+            <div class="color yellow"></div>
+
+
+        </div>
+    </div>
+    <!-- is used for drawing  -->
+    <canvas id="canvas">
+        <div id="textdiv">
+            <textarea id = "textArea" cols="20" rows="4" autofocus>
+                
+        </textarea></div>
+    </canvas>
+</body>
+<script>
+    let canvasBoard = document.querySelector("canvas");
+canvasBoard.height = window.innerHeight;
+canvasBoard.width = window.innerWidth;
+//using tools
+// let rectTool = document.querySelector(".fa-square");
+// let lineTool = document.querySelector(".fa-grip-lines-vertical");
+
+let tool = canvasBoard.getContext("2d");
+let cTool = "pencil";
+
+// //for boundary
+tool.strokeStyle ="#343434";
+//  --------------------tool selection------------------
+let box = $(".size-box");
+$("#pencil").click(function(){
+    if(cTool =='pencil')
+    {
+        box[0].style.display ="flex";
+    }
+    else{
+         removeBox();
+
+        cTool="pencil";
+    }
+});
+
+$(".eraser").click(function(){
+    if(cTool =='erase')
+    {
+        box[1].style.display ="flex";
+    }
+    else{
+        cTool="erase";
+         removeBox();
+        
+    }
+});
+$(".rect").click(function(){
+
+    if(cTool =='rect')
+    {
+        box[2].style.display ="flex";
+    }
+    else{
+        cTool="rect";
+        removeBox();
+        
+    }
+});
+
+$(".line").click(function(){
+    if(cTool =='line')
+    {
+        box[3].style.display ="flex";
+    }
+    else{
+          removeBox();
+        cTool="line";
+    }
+});
+function removeBox(){
+    for(let i =0;i<4;i++)
+         {
+            box[i].style.display ="none";
+         }
+}
+let ix,iy,fx,fy; 
+let border = canvasBoard.getBoundingClientRect();
+let delX = border.left; //dis between body and canvas in x & y
+let delY = border.top;
+//  ---------------------------Drawing functions ----------------------------------------   
+let isMouseDown = false;
+
+$("#canvas").mousedown(function(e){
+    ix = parseInt(e.clientX-delX);
+    iy = parseInt(e.clientY-delY);
+    fx = ix;
+    fy = iy;
+    isMouseDown =true;
+});
+$("#canvas").mouseup(function(e){
+    
+    if(cTool =="pencil" || cTool == "erase")
+    {
+
+        ix = parseInt(e.clientX-delX);
+        iy = parseInt(e.clientY-delY);
+        isMouseDown= false;
+
+    }
+    else if(cTool  == "line" ||  cTool == "rect"){
+          
+        let width = fx-ix;
+        let height = fy-iy;
+        
+        if(cTool == "rect"){
+            tool.strokeRect(ix,iy,width,height);  
+        }
+        else if(cTool ="line"){
+            
+            tool.beginPath();
+            tool.moveTo(ix,iy);
+            tool.lineTo(fx,fy);
+            tool.stroke();
+        }
+    }
+});
+let eraseSize = 8;
+$("#canvas").mousemove(function(e){
+  
+    ix = parseInt(e.clientX-delX);
+    iy = parseInt(e.clientY-delY);
+
+    if(isMouseDown)
+    {
+        tool.beginPath();
+        if(cTool == "pencil"){
+            tool.globalCompositeOperation = "source-over";
+            tool.moveTo(fx,fy);
+            tool.lineTo(ix,iy);
+            tool.stroke();
+
+             
+        }
+
+        else if(cTool == "erase"){
+            tool.globalCompositeOperation ="destination-out";
+            tool.arc(fx,fy,eraseSize,0,Math.PI*2,false);
+            tool.fill();
+             
+        }
+        else{
+            return ;
+        }
+        fx =ix;
+        fy = iy;
+    }
+
+});
+$("#canvas").mouseout((e)=>{
+
+    ix = parseInt(e.clientX-delX);
+    iy = parseInt(e.clientY-delY);
+    isMouseDown = false;
+
+
+});
+
+// --------------------------color change--------------------
+$(".red").click(function(){
+    tool.strokeStyle = "#ff6347";
+    tool.fillStyle = "#ff6347";
+    $(".size").css("background-color","#ff6347");
+});
+
+$(".blue").click(function(){
+    tool.strokeStyle = "#4682b4";
+    tool.fillStyle = "#4682b4";
+
+    $(".size").css("background-color","#4682b4");
+
+});
+
+$(".green").click(function(){
+    tool.strokeStyle = "#32cd32";
+    tool.fillStyle = "#32cd32";
+
+    $(".size").css("background-color","#32cd32");
+
+});
+$(".black").click(function(){
+    tool.strokeStyle = "#343434";
+    tool.fillStyle = "#343434";
+
+    
+    $(".size").css("background-color","#343434");
+
+})
+$(".white").click(function(){
+    tool.strokeStyle = "#F0FFFF";
+    tool.fillStyle = "#F0FFFF";
+
+    $(".size").css({"background-color":"#F0FFFF","border":"1px solid #343434"});
+
+
+})
+$(".yellow").click(function(){
+    tool.strokeStyle = "#FFC300 ";
+    tool.fillStyle = "#FFC300 ";
+
+    $(".size").css("background-color","#FFC300 ");
+
+})
+// ----------------------toogle effect -------------------
+let toogle =1;
+$(".pad-color").click(function(){
+    if(toogle %2!=0){
+    $(this).css("background-color","#F0FFFF");
+    $("body").css("background-color","#28282B");
+    $(".toolbar").css("background-color","#28282B");
+    toogle++;
+}
+else{
+    $(this).css("background-color","#28282B");
+    $("body").css("background-color","#F0FFFF");
+    $(".toolbar").css("background-color","#F0FFFF");
+    toogle++;
+}
+
+})
+// -------------------- change size----------------
+$(".size1").click((e)=>{
+    tool.lineWidth= 1.25;
+});
+$(".size2").click((e)=>{
+    tool.lineWidth= 2.5;
+});
+$(".size3").click((e)=>{
+    tool.lineWidth= 3.5;
+});
+$(".size4").click((e)=>{
+    tool.lineWidth= 4.5;
+});
+// ------------------change eraser size-----------------------
+$("#erase1").click(()=>{
+    eraseSize =10;
+})
+$("#erase2").click(()=>{
+    eraseSize =16;
+})
+$("#erase3").click(()=>{
+    eraseSize =22;
+})
+$("#erase4").click(()=>{
+    eraseSize =27;
+})
+
+// ----------------------all clear -----------------
+$(".all-clear").click(()=>{
+    tool.clearRect(0,0,border.width,border.height); 
+});
+
+// -------------------------add text------------------------------
+let txt =1;
+$(".text").click((e)=>{
+    if(txt%2!=0){
+    $("#textdiv").css("display","flex");
+    $("#textArea").val("");
+    $("#textArea").focus();
+    txt++;
+    }
+    else{
+    $("#textdiv").css("display","none");
+    tool.font = "bold 25px Arial"
+
+    let val = $("#textArea").val();
+    if(val!="" || val != " " || val != '\n'){
+    tool.fillText(val,e.clientX-delX,e.clientY-delY);
+    }
+    txt++;
+}
+
+    
+});
+</script>
+<script>
+    dragElement(document.getElementById("textdiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById("textArea")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById("textArea").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+ 
+</html> 

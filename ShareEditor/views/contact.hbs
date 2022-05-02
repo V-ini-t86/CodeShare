@@ -1,24 +1,24 @@
 <h1 class="text-center">Contact Us</h1>
-<form class="col-md-6 col-md-offset-3">
-  {{#each errorMessage}}
+<form   class="col-md-6 col-md-offset-3" method="post">
+  {{#each errorMessages}}
   <div class="alert alert-danger">{{this.msg}}</div>
   {{/each}}
      <div class="mb-3">
     <label  class="form-label">Full Name</label>
-    <input type="text" class="form-control" placeholder ="xyz codeshare" aria-describedby="emailHelp">
+    <input type="text" class="form-control" placeholder ="xyz codeshare" aria-describedby="emailHelp" name="name" value ={{name}}>
     </div>
   <div class="mb-3">
     <label  class="form-label">Email address</label>
-    <input type="email" class="form-control" placeholder="xyz@example.com" aria-describedby="emailHelp">
+    <input type="email" class="form-control" placeholder="xyz@example.com" aria-describedby="emailHelp" name ="mail"value ={{mail}}>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
    <div class="mb-3">
     <label  class="form-label">Phone Number</label>
-    <input type="number" class="form-control" placeholder="+91" aria-describedby="emailHelp">
+    <input type="number" class="form-control" placeholder="+91" aria-describedby="emailHelp" name="number" value={{number}}>
     </div>
   <div class="mb-3">
     <label   class="form-label">Message</label>
- <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+ <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name ='message'>value{{message}}</textarea>
    </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input">
